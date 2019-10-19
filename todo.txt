@@ -1,0 +1,15 @@
+take first 2 sentences and last 2 sentences  -- find only emotions and sentiments
+
+enrich
+
+take emotions
+
+take positive negative sentiment
+
+take keywords  -- tf-idf parameter for each word
+
+create a list of words for {good reviews}  -- take the count of words per document as a feature
+
+create a list of words for {bad reviews}  -- take the count of words per document as a feature
+
+Feed everything to Naive Baayes regressor. and classifier select the best performed one.

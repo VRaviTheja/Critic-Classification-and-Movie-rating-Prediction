@@ -1,0 +1,47 @@
+There are a total of 6 files
+
+config.py
+discovery.py
+main.py
+mlr.py
+read.py
+tfidf.py
+
+
+Firstly initialize all the flags in config
+1. Give hidden file path
+2. mention no:of jsons in hidden file
+3. update test_size and count_test to no: of jsons
+
+uploaded_t = True
+Should be True as default as I have already uploaded
+
+uploaded_test = False
+should be False because this should be uploaded to discovery.
+
+training_needed = False
+I have a pickle file with all the weights after training.
+-------Or else make it True if you want to generate a new weights and vocab_set
+
+
+all training values are stored in pickle objects.json
+
+
+output.txt
+Contains the Critics for the prediction. This will be in the same order as uploading moment. Here I am uploading files with name
+rev_{no}.json
+
+The output will be in the order rev_1.json, rev_2.json, ....
+This is because I am sorting the query results based on metadata (enriched filename)
+
+
+In case you need to run predicting 2nd time with new files which are to be upload files, 
+ it’s necessary to remove the previously created collection (named  test_classifier) and delete test_t directory which gets created in the running path
+
+For Deleting and Creating a collection you can use functions in discovery.py
+When a new collection is created update the config with new id fetched by json and proceed.
+
+IMPORTANT POINT
+When doing only predicting enable flags for uploading.
+
+And Again predict by disabling flags of uploading hidden. Then it will work without error.

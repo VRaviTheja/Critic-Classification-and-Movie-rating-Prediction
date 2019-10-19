@@ -1,0 +1,57 @@
+Features Used:
+
+Numerical Data:
+
+Star Ratings
+Anger
+Joy
+Sadness
+Disgust
+Fear
+Sentiment
+Length of Review
+No: of Question Marks in reviews: Some Authors use '?' frequently
+
+
+Alphabetic data:
+
+Keywords
+Review Text
+
+
+Applied TF-IDF from scratch on Keywords and Review for each Document(600)
+
+Approach of TF-IDF:
+
+1. Built a vocabulary set on Training data
+2. Found the tf-idf vectors for each document
+3. Trained these vectors with SVM multi variate regression and found the polynomial weights.
+4. Also removed words which are in less than 5 documents and more than 80%  of documents, Since these won't help in generalizing an author.
+
+
+Training:
+Used the above numerical data along with tf-idf vectors (Didn't Use any library) to train to linear SVM_Classifier (Which was built from scratch)
+
+Why I used SVM?
+Provides great relevency in the NLP industry
+
+
+Predicting:
+
+1. After Uploading Documents for Predicting into IBM discovery
+2. We will fetch all the enriched data for predicting.
+3. We will send Keywords and Review for tf-idf vector generation using vocabulary set of training.
+4. Give these combined vectors from 2 & 3 and give to the model which uses weights.
+
+
+
+
+Alternate Approaches:
+
+We can take more features like
+1. No: of relations in review from enrichment
+2. No: of Categories he is talking about
+3. Type of relations like Eg: "Authorof", "Directorof"
+4. Considering each entity (i.e., Person, organization, Place and others in each review) as a seperate feature and hot encoding
+5. Can perform feature engineering and find most frequent usage of words by an author.
+6. We also can perform word2vec algorithm to cluster the reviews of each person.
